@@ -1579,8 +1579,7 @@ fn copy_path_into_inner(
                 }
             }
             // Allow "./" as the path
-            (Component::CurDir, false) if path.components().count() == 1 => {}
-            (Component::CurDir, false) => continue,
+            (Component::CurDir, false) => {}
             (Component::Normal(_), _) | (_, true) => {}
         };
         if needs_slash {
